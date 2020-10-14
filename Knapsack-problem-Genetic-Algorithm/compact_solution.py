@@ -9,13 +9,10 @@ MUTATION_RATE = 0.05
 
 def take_inputs():
     count = int(input("Enter the number of items : "))
-    weights = []
-    values = []
-    for i in range(1, count+1):
-        w = int(input(f'enter weight for item {i} : '))
-        v = int(input(f'enter value for item {i} : '))
-        weights.append(w)
-        values.append(v)
+    weight_input = input(f'Enter the weights, seperated by spaces : ')
+    value_input = input(f'Enter the values, seperated by spaces : ')
+    weights = list(map(int,weight_input.split()))
+    values = list(map(int,value_input.split()))
     limit = int(input("Enter the weight limit : "))
     return count, weights, values, limit
 
